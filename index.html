@@ -202,7 +202,7 @@
       <div class="stage" id="stage">
       <div class="scene" id="L0" data-g="L">
         <div class="tag">STEP 01</div>
-        <svg viewBox="0 0 400 320" role="img" aria-label="주문 번호 칸에 커서를 두고 화물 용지의 바코드를 스캔하는 그림">
+        <svg viewBox="0 0 400 320" role="img" aria-label="바코드 검색 칸에 커서를 두고 화물 용지의 바코드를 스캔하는 그림">
 <rect x="14" y="30" width="200" height="228" rx="7" fill="#C79358"/>
 <rect x="14" y="30" width="200" height="228" rx="7" fill="none" stroke="#8F6234" stroke-width="2.5"/>
 <rect x="26" y="42" width="176" height="204" rx="3" fill="#FDFDFB" stroke="#D8D3C7" stroke-width="1.5"/>
@@ -220,7 +220,7 @@
 <text x="142" y="87" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" font-weight="700" fill="#14171A">1</text>
 <circle cx="177" cy="180" r="11" fill="#FFC400"/>
 <text x="177" y="184" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" font-weight="700" fill="#14171A">2</text>
-<rect x="226" y="82" width="166" height="80" rx="8" fill="#FDFDFB" stroke="#D8D3C7" stroke-width="1.5"/><text x="240" y="106" font-family="ui-monospace,monospace" font-size="9.5" fill="#8A9099">주문 번호</text><rect x="238" y="114" width="142" height="28" rx="5" fill="#fff" stroke="#6C5CE0" stroke-width="2"/><rect data-anim="blink" x="247" y="120" width="2.4" height="16" fill="#14171A"/><text x="255" y="132" font-family="ui-monospace,monospace" font-size="8.5" fill="#A7AEB8">바코드 스캔은 필수</text><rect x="232" y="108" width="154" height="40" rx="8" fill="none" stroke="#FFC400" stroke-width="3"/>
+<rect x="226" y="82" width="166" height="80" rx="8" fill="#FDFDFB" stroke="#D8D3C7" stroke-width="1.5"/><text x="240" y="106" font-family="ui-monospace,monospace" font-size="9.5" fill="#8A9099">바코드 검색</text><rect x="238" y="114" width="142" height="28" rx="5" fill="#fff" stroke="#6C5CE0" stroke-width="2"/><rect data-anim="blink" x="247" y="120" width="2.4" height="16" fill="#14171A"/><text x="256" y="132" font-family="ui-monospace,monospace" font-size="9" fill="#A7AEB8">가송장 번호</text><rect x="232" y="108" width="154" height="40" rx="8" fill="none" stroke="#FFC400" stroke-width="3"/>
 <g transform="translate(238,214) rotate(-20)">
 <rect x="0" y="0" width="76" height="26" rx="8" fill="#31383F" stroke="#454E56" stroke-width="2"/>
 <rect x="46" y="21" width="24" height="44" rx="7" fill="#31383F" stroke="#454E56" stroke-width="2"/>
@@ -512,7 +512,7 @@
     L: { title:'라벨 출력 &amp; 부착 작업',
          flow:'<b>스캔</b> → <b>출력</b> → <b>GL번호 대조</b> → <b>부착</b>',
          steps:[
-{k:'01',t:'바코드를 스캔한다', p:'커서를 <em>주문 번호</em> 칸에 두고 스캔한다. 화물 위 용지의 상단 바코드나 오른쪽 긴 바코드 중 하나만 읽으면 된다.', d:7500},
+{k:'01',t:'바코드를 스캔한다', p:'커서를 <em>바코드 검색</em> 칸에 두고 스캔한다. 화물 위 용지의 상단 바코드나 오른쪽 긴 바코드 중 하나만 읽으면 된다.', d:7500},
     {k:'02',t:'라벨이 출력된다', p:'스캔하면 프린터에서 라벨이 나온다. 라벨 <em>맨 아래</em>에 GL로 시작하는 번호가 찍혀 있다.', d:5500},
     {k:'03',t:'GL번호를 맞춰본다', p:'라벨 하단의 GL번호와 화물 용지의 GL번호가 <em>완전히 같은지</em> 확인한다. 같을 때만 다음으로 넘어간다.', d:6500},
     {k:'04',t:'GL번호를 가리지 않게 붙인다', p:'화물 용지의 <em>GL번호와 바코드를 덮지 않는 자리</em>에 붙인다. 나중에 물건이 바뀌었는지 대조해야 하는 번호다.', d:7000},
