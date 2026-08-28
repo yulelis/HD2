@@ -370,6 +370,28 @@
           </g>
         </svg>
       </div>
+      <div class="scene" id="L6" data-g="L">
+        <div class="tag alt">예외 C</div>
+        <svg viewBox="0 0 400 320" role="img" aria-label="프로그램 설치 창이 뜨면 취소를 누르고 새로고침을 여러 번 누르는 그림">
+<rect x="90" y="14" width="220" height="140" rx="10" fill="#2B3238" stroke="#3D454D" stroke-width="2"/>
+<rect x="99" y="23" width="202" height="122" rx="5" fill="#0D0F11"/>
+<rect x="118" y="40" width="164" height="90" rx="5" fill="#FDFDFB" stroke="#D8D3C7" stroke-width="1.5"/>
+<path d="M118 45 a5 5 0 0 1 5 -5 h154 a5 5 0 0 1 5 5 v11 h-164 z" fill="#6C5CE0"/>
+<text x="200" y="53.5" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" font-weight="700" fill="#FDFDFB">프로그램 설치</text>
+<text x="200" y="80" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9.5" fill="#14171A">설치하시겠습니까?</text>
+<rect x="134" y="98" width="58" height="22" rx="4" fill="#FFFFFF" stroke="#B9C0CA" stroke-width="1.5"/>
+<text x="163" y="112.5" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9.5" fill="#5A6270">설치</text>
+<rect x="208" y="98" width="58" height="22" rx="4" fill="#FFFFFF" stroke="#6C5CE0" stroke-width="2"/>
+<text x="237" y="112.5" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9.5" font-weight="700" fill="#6C5CE0">취소</text>
+<rect x="203" y="93" width="68" height="32" rx="8" fill="none" stroke="#FFC400" stroke-width="3"/>
+<path d="M200 162 L200 184 M190 175 L200 185 L210 175" stroke="#FFC400" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<g data-anim="ping"><circle cx="200" cy="228" r="34" fill="none" stroke="#FFC400" stroke-width="1.5" opacity=".5"/></g>
+<path d="M182 211 A24 24 0 1 0 202 204" stroke="#FFC400" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+<path d="M175 202 L182 211 L192 206" stroke="#FFC400" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="228" y="200" text-anchor="middle" font-family="ui-monospace,monospace" font-size="13" font-weight="700" fill="#8D959E">×3</text>
+<text x="200" y="290" text-anchor="middle" font-family="ui-monospace,monospace" font-size="13" font-weight="700" fill="#FFC400">설치 취소 → 새로고침 여러 번</text>
+</svg>
+      </div>
       <div class="scene" id="M0" data-g="M">
         <div class="tag">STEP 01</div>
         <svg viewBox="0 0 400 320" role="img" aria-label="팔레트 번호를 체크하고 도착 국가 확인이 켜져 있는지 보는 그림">
@@ -620,7 +642,8 @@
     {k:'03',t:'GL번호를 맞춰본다', p:'라벨 하단의 GL번호와 화물 용지의 GL번호가 <em>완전히 같은지</em> 확인한다. 같을 때만 다음으로 넘어간다.', d:6500},
     {k:'04',t:'GL번호를 가리지 않게 붙인다', p:'화물 용지의 <em>GL번호와 바코드를 덮지 않는 자리</em>에 붙인다. 나중에 물건이 바뀌었는지 대조해야 하는 번호다.', d:7000},
     {k:'A', t:'경고음 + 빨간 글씨가 뜨면', p:'스캔했는데 컴퓨터에서 소리가 나고 화면에 빨간 글씨가 뜨면, 라벨을 붙이지 말고 <em>화물을 바닥에 내려놓는다</em>.', d:6500},
-    {k:'B', t:'GL번호가 다르면', p:'붙이지 말고 다시 스캔한다. 그래도 다르면 <em>담당자에게 확인</em>한다.', d:6000}
+    {k:'B', t:'GL번호가 다르면', p:'붙이지 말고 다시 스캔한다. 그래도 다르면 <em>담당자에게 확인</em>한다.', d:6000},
+    {k:'C', t:'프로그램 설치 창이 뜨면', p:'화면에 <em>프로그램 설치</em> 창이 뜨면 설치하지 말고 <em>취소</em>를 누른다. 그다음 새로고침을 <em>여러 번</em> 누른다.', d:6500}
     ] },
     M: { title:'맵핑 작업',
          flow:'<b>팔레트 체크 · 도착 국가 확인</b> → <b>스캔</b> → <b>수량 확인</b> → <b>번호 변경</b>',
@@ -675,7 +698,7 @@
     STEPS.forEach(function(s,n){
       var b=document.createElement('button');
       b.className='dot'; b.textContent=s.k;
-      if(s.k==='A'||s.k==='B') b.style.color='#E4392F';
+      if(s.k==='A'||s.k==='B'||s.k==='C') b.style.color='#E4392F';
       b.setAttribute('aria-label',s.k+': '+s.t);
       b.onclick=function(){ go(n,true); };
       dotsBox.appendChild(b); dots.push(b);
